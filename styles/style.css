@@ -1,0 +1,748 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(https://www.tenco.ch/wp-content/uploads/2020/01/tenco-home.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-all {
+  width: 100%;
+  background: white;
+}
+.container-all .container {
+  background: white;
+  max-width: 900px;
+  min-height: 50px;
+  margin: 0 auto;
+}
+
+.logo .container {
+  text-align: center;
+}
+.logo .container img {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  height: 53px;
+  font-size: 17px;
+  font-family: Montserrat;
+}
+.menu ul li {
+  width: 20%;
+  position: relative;
+}
+.menu ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  color: #303030;
+}
+.menu ul li a::before {
+  content: "";
+  background-color: #D4AA00;
+  display: block;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: -4px;
+  transition: all 0.5s ease-out;
+}
+.menu ul li a:hover::before {
+  top: 0px;
+  height: 3px;
+}
+.menu ul li a::after {
+  content: "";
+  background-color: #D4AA00;
+  display: block;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  bottom: -4px;
+  transition: all 0.5s ease-out;
+}
+.menu ul li a:hover::after {
+  bottom: 0px;
+  height: 3px;
+}
+
+.slogan {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 722px;
+}
+.slogan .container {
+  height: 722px;
+  display: flex;
+}
+.slogan .container h1 {
+  color: #FFFFFF;
+  font-family: "Fira Code", monospace;
+  font-size: 55px;
+  font-weight: normal;
+  text-transform: uppercase;
+  max-width: 900px;
+  height: 110px;
+  text-align: center;
+  margin: auto;
+}
+
+.main-info {
+  /*це змінна*/
+  height: 722px;
+  /*2360px*/
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+.main-info .container {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1080px;
+}
+.main-info .container .vertical-line {
+  width: 50%;
+  height: 100px;
+  position: relative;
+  border-right: 1px solid silver;
+  /* left: calc(50%-4px/2); */
+  /* left: 50%; */
+}
+.main-info .container .slide {
+  position: relative;
+  max-width: 1080px;
+  left: -120%;
+  right: 120%;
+  transition: all 2s;
+  box-sizing: border-box;
+  padding-top: 100px;
+}
+.main-info .container .slide .info-text {
+  width: 100%;
+  color: #020101;
+  text-align: center;
+  background: white;
+}
+.main-info .container .slide .info-text h2 {
+  font-family: "Fira Code", monospace;
+  font-size: 45px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 20px 0;
+}
+.main-info .container .slide .info-text p {
+  font-family: "Tinos", serif;
+  font-size: 20px;
+  line-height: 1.5;
+  padding-bottom: 25px;
+}
+.main-info .container.after-slide .slide {
+  right: 0;
+  left: 0;
+}
+
+.cards {
+  height: 620px;
+  box-sizing: border-box;
+}
+.cards .container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  height: 540px;
+  display: flex;
+  justify-content: space-between;
+}
+.cards .container .card-second {
+  perspective: 1000px;
+}
+.cards .container .card-first,
+.cards .container .card-second,
+.cards .container .card-third {
+  background: transparent;
+  width: 380px;
+  height: 540px;
+  padding: 10px;
+  align-items: center;
+}
+.cards .container .card-first .card-first-inner,
+.cards .container .card-first .card-third-inner,
+.cards .container .card-second .card-first-inner,
+.cards .container .card-second .card-third-inner,
+.cards .container .card-third .card-first-inner,
+.cards .container .card-third .card-third-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  content: "";
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.cards .container .card-first .card-first-inner .card-first-front,
+.cards .container .card-first .card-first-inner .card-third-front,
+.cards .container .card-first .card-third-inner .card-first-front,
+.cards .container .card-first .card-third-inner .card-third-front,
+.cards .container .card-second .card-first-inner .card-first-front,
+.cards .container .card-second .card-first-inner .card-third-front,
+.cards .container .card-second .card-third-inner .card-first-front,
+.cards .container .card-second .card-third-inner .card-third-front,
+.cards .container .card-third .card-first-inner .card-first-front,
+.cards .container .card-third .card-first-inner .card-third-front,
+.cards .container .card-third .card-third-inner .card-first-front,
+.cards .container .card-third .card-third-inner .card-third-front {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.cards .container .card-first .card-first-inner .card-first-front,
+.cards .container .card-first .card-third-inner .card-first-front,
+.cards .container .card-second .card-first-inner .card-first-front,
+.cards .container .card-second .card-third-inner .card-first-front,
+.cards .container .card-third .card-first-inner .card-first-front,
+.cards .container .card-third .card-third-inner .card-first-front {
+  background-image: url(https://www.tenco.ch/wp-content/uploads/2020/01/home-member-last1.vertical-tenco.jpg);
+}
+.cards .container .card-first .card-first-inner .card-third-front,
+.cards .container .card-first .card-third-inner .card-third-front,
+.cards .container .card-second .card-first-inner .card-third-front,
+.cards .container .card-second .card-third-inner .card-third-front,
+.cards .container .card-third .card-first-inner .card-third-front,
+.cards .container .card-third .card-third-inner .card-third-front {
+  background-image: url(https://www.tenco.ch/wp-content/uploads/2020/10/events3.vertical-tenco.jpg);
+}
+.cards .container .card-first .card-first-inner .card-first-back,
+.cards .container .card-first .card-first-inner .card-third-back,
+.cards .container .card-first .card-third-inner .card-first-back,
+.cards .container .card-first .card-third-inner .card-third-back,
+.cards .container .card-second .card-first-inner .card-first-back,
+.cards .container .card-second .card-first-inner .card-third-back,
+.cards .container .card-second .card-third-inner .card-first-back,
+.cards .container .card-second .card-third-inner .card-third-back,
+.cards .container .card-third .card-first-inner .card-first-back,
+.cards .container .card-third .card-first-inner .card-third-back,
+.cards .container .card-third .card-third-inner .card-first-back,
+.cards .container .card-third .card-third-inner .card-third-back {
+  height: 100%;
+  width: 100%;
+  background: white;
+  font-weight: normal;
+  text-align: center;
+  line-height: 2.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: all 1s;
+}
+.cards .container .card-first .card-first-inner .card-first-back .card-back-container h3,
+.cards .container .card-first .card-first-inner .card-third-back .card-back-container h3,
+.cards .container .card-first .card-third-inner .card-first-back .card-back-container h3,
+.cards .container .card-first .card-third-inner .card-third-back .card-back-container h3,
+.cards .container .card-second .card-first-inner .card-first-back .card-back-container h3,
+.cards .container .card-second .card-first-inner .card-third-back .card-back-container h3,
+.cards .container .card-second .card-third-inner .card-first-back .card-back-container h3,
+.cards .container .card-second .card-third-inner .card-third-back .card-back-container h3,
+.cards .container .card-third .card-first-inner .card-first-back .card-back-container h3,
+.cards .container .card-third .card-first-inner .card-third-back .card-back-container h3,
+.cards .container .card-third .card-third-inner .card-first-back .card-back-container h3,
+.cards .container .card-third .card-third-inner .card-third-back .card-back-container h3 {
+  font-family: "Fira Code", monospace;
+  font-size: 21px;
+  text-transform: uppercase;
+}
+.cards .container .card-first .card-first-inner .card-first-back .card-back-container p,
+.cards .container .card-first .card-first-inner .card-third-back .card-back-container p,
+.cards .container .card-first .card-third-inner .card-first-back .card-back-container p,
+.cards .container .card-first .card-third-inner .card-third-back .card-back-container p,
+.cards .container .card-second .card-first-inner .card-first-back .card-back-container p,
+.cards .container .card-second .card-first-inner .card-third-back .card-back-container p,
+.cards .container .card-second .card-third-inner .card-first-back .card-back-container p,
+.cards .container .card-second .card-third-inner .card-third-back .card-back-container p,
+.cards .container .card-third .card-first-inner .card-first-back .card-back-container p,
+.cards .container .card-third .card-first-inner .card-third-back .card-back-container p,
+.cards .container .card-third .card-third-inner .card-first-back .card-back-container p,
+.cards .container .card-third .card-third-inner .card-third-back .card-back-container p {
+  font-family: "Tinos", serif;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.cards .container .card-first .card-first-inner .card-first-back .card-back-container a,
+.cards .container .card-first .card-first-inner .card-third-back .card-back-container a,
+.cards .container .card-first .card-third-inner .card-first-back .card-back-container a,
+.cards .container .card-first .card-third-inner .card-third-back .card-back-container a,
+.cards .container .card-second .card-first-inner .card-first-back .card-back-container a,
+.cards .container .card-second .card-first-inner .card-third-back .card-back-container a,
+.cards .container .card-second .card-third-inner .card-first-back .card-back-container a,
+.cards .container .card-second .card-third-inner .card-third-back .card-back-container a,
+.cards .container .card-third .card-first-inner .card-first-back .card-back-container a,
+.cards .container .card-third .card-first-inner .card-third-back .card-back-container a,
+.cards .container .card-third .card-third-inner .card-first-back .card-back-container a,
+.cards .container .card-third .card-third-inner .card-third-back .card-back-container a {
+  color: #D4AA00;
+  border-color: #D4AA00;
+  border: 2px solid #D4AA00;
+  border-radius: 7%;
+  background: transparent;
+  font-size: 15px;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: all 1s;
+}
+.cards .container .card-first .card-first-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-first .card-first-inner .card-third-back .card-back-container a:hover,
+.cards .container .card-first .card-third-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-first .card-third-inner .card-third-back .card-back-container a:hover,
+.cards .container .card-second .card-first-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-second .card-first-inner .card-third-back .card-back-container a:hover,
+.cards .container .card-second .card-third-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-second .card-third-inner .card-third-back .card-back-container a:hover,
+.cards .container .card-third .card-first-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-third .card-first-inner .card-third-back .card-back-container a:hover,
+.cards .container .card-third .card-third-inner .card-first-back .card-back-container a:hover,
+.cards .container .card-third .card-third-inner .card-third-back .card-back-container a:hover {
+  color: white;
+  background-color: #D4AA00;
+}
+.cards .container .card-first .card-second-inner,
+.cards .container .card-second .card-second-inner,
+.cards .container .card-third .card-second-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+.cards .container .card-first .card-second-front,
+.cards .container .card-second .card-second-front,
+.cards .container .card-third .card-second-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  z-index: 2;
+}
+.cards .container .card-first .card-second-front .card-second-img,
+.cards .container .card-second .card-second-front .card-second-img,
+.cards .container .card-third .card-second-front .card-second-img {
+  background: url(https://www.tenco.ch/wp-content/uploads/2020/01/home-services-last1.vertical-tenco.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.cards .container .card-first .card-second-back,
+.cards .container .card-second .card-second-back,
+.cards .container .card-third .card-second-back {
+  background: white;
+  width: 100%;
+  height: 100%;
+  font-weight: normal;
+  text-align: center;
+  line-height: 2.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s;
+  transform: scaleX(-1);
+  z-index: 1;
+}
+.cards .container .card-first .card-second-back .card-back-container h3,
+.cards .container .card-second .card-second-back .card-back-container h3,
+.cards .container .card-third .card-second-back .card-back-container h3 {
+  font-family: "Fira Code", monospace;
+  font-size: 21px;
+  text-transform: uppercase;
+}
+.cards .container .card-first .card-second-back .card-back-container p,
+.cards .container .card-second .card-second-back .card-back-container p,
+.cards .container .card-third .card-second-back .card-back-container p {
+  font-family: "Tinos", serif;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+.cards .container .card-first .card-second-back .card-back-container a,
+.cards .container .card-second .card-second-back .card-back-container a,
+.cards .container .card-third .card-second-back .card-back-container a {
+  color: #D4AA00;
+  border-color: #D4AA00;
+  border: 2px solid #D4AA00;
+  border-radius: 7%;
+  background: transparent;
+  font-size: 15px;
+  padding: 12px 24px;
+  text-decoration: none;
+  transition: all 1s;
+}
+.cards .container .card-first .card-second-back .card-back-container a:hover,
+.cards .container .card-second .card-second-back .card-back-container a:hover,
+.cards .container .card-third .card-second-back .card-back-container a:hover {
+  color: white;
+  background-color: #D4AA00;
+}
+.cards .container .card-first .card-first-back,
+.cards .container .card-second .card-first-back,
+.cards .container .card-third .card-first-back {
+  top: -100%;
+  bottom: 0;
+}
+.cards .container .card-first .card-third-back,
+.cards .container .card-second .card-third-back,
+.cards .container .card-third .card-third-back {
+  right: -100%;
+  left: 100%;
+  top: 0;
+  bottom: 0;
+}
+.cards .container .card-first:hover .card-first-back {
+  top: 0;
+  bottom: 100%;
+}
+.cards .container .card-second:hover .card-second-inner {
+  transform: rotateY(180deg);
+}
+.cards .container .card-third:hover .card-third-back {
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.horizontal-slider {
+  height: 950px;
+  /*2360px*/
+  box-sizing: border-box;
+}
+.horizontal-slider .container {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1080px;
+}
+.horizontal-slider .container .vertical-line {
+  width: 50%;
+  height: 100px;
+  position: relative;
+  border-right: 1px solid silver;
+  /* left: calc(50%-4px/2); */
+  /* left: 50%; */
+}
+.horizontal-slider .container .horizontal-slider-info {
+  width: 100%;
+  height: 230px;
+  color: #020101;
+  text-align: center;
+  background: white;
+}
+.horizontal-slider .container .horizontal-slider-info h2 {
+  font-family: "Fira Code", monospace;
+  font-size: 50px;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1;
+  padding-top: 55px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css {
+  width: 1080px;
+  height: 230px;
+  padding-top: 20px;
+  /* margin: auto; */
+  /* margin-top: 25px; */
+  /* border: 1px solid black; */
+  position: relative;
+  overflow: hidden;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide-css {
+  width: 268px;
+  height: 230px;
+  position: absolute;
+  top: 0;
+  right: -268px;
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 24s;
+          animation-duration: 24s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes slide {
+  from {
+    top: 0;
+    right: -268px;
+  }
+  1% {
+    transform: translate(0px, 0px);
+  }
+  99.1% {
+    transform: translate(-1380px, 0);
+  }
+  99.5% {
+    transform: translate(-1380px, 300px);
+  }
+  99.9% {
+    transform: translate(0px, 300px);
+  }
+  to {
+    transform: 0px, 0px;
+  }
+}
+@keyframes slide {
+  from {
+    top: 0;
+    right: -268px;
+  }
+  1% {
+    transform: translate(0px, 0px);
+  }
+  99.1% {
+    transform: translate(-1380px, 0);
+  }
+  99.5% {
+    transform: translate(-1380px, 300px);
+  }
+  99.9% {
+    transform: translate(0px, 300px);
+  }
+  to {
+    transform: 0px, 0px;
+  }
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide1-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/boucheron-150x150-1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  z-index: 1;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide2-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/LVMH-150x150-1.png);
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide3-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/En-coulisse-150x150-1.png);
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide4-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/elite-rent-a-car-150x150-1.png);
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide5-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/global-gift-150x150-1.png);
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide6-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/four-seasons-150x150-2.png);
+  -webkit-animation-delay: 15s;
+          animation-delay: 15s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide7-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/la-r%C3%A9serve-150x150-1.png);
+  -webkit-animation-delay: 18s;
+          animation-delay: 18s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-css .slide8-css {
+  background: url(https://tenco.ch/wp-content/uploads/2020/09/brunello-cucinelli-150x150-1.png);
+  -webkit-animation-delay: 21s;
+          animation-delay: 21s;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js {
+  max-width: 1080px;
+  /* max-width: 90%; */
+  /* width: 268px; */
+  position: relative;
+  /* margin: auto; */
+  height: 230px;
+  /* .previous:hover,
+  .next:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+  } */
+  /* Анимация слайдов: */
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .slider-container-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .item {
+  display: block;
+  width: 268px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* width: 100%; */
+  width: 268px;
+  height: 230px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .previous,
+.horizontal-slider .container .horizontal-slider-info .slider-js .next {
+  /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+  cursor: pointer;
+  display: block;
+  /* Положение элемента задаётся относительно границ браузера: */
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  /* Оформление самих кнопок: */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  /* Плавное появление фона при наведении курсора: */
+  transition: 0.6s ease;
+  /* Скругление границ: */
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-js .item {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  /* Устанавливаем и изменяем степень прозрачности: */
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  /* Устанавливаем и изменяем степень прозрачности: */
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js {
+  max-width: 1080px;
+  /* max-width: 90%; */
+  /* width: 268px; */
+  position: relative;
+  /* margin: auto; */
+  height: 230px;
+  /* .previous:hover,
+  .next:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+  } */
+  /* Анимация слайдов: */
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .slider-cycle-container-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .item-cycle {
+  display: block;
+  width: 268px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .item-cycle img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* width: 100%; */
+  width: 268px;
+  height: 230px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .previous,
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .next {
+  /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+  cursor: pointer;
+  display: block;
+  /* Положение элемента задаётся относительно границ браузера: */
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  /* Оформление самих кнопок: */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  /* Плавное появление фона при наведении курсора: */
+  transition: 0.6s ease;
+  /* Скругление границ: */
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.horizontal-slider .container .horizontal-slider-info .slider-cycle-js .item-cycle {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+@keyframes fade {
+  /* Устанавливаем и изменяем степень прозрачности: */
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

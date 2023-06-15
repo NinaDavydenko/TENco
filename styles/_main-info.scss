@@ -1,0 +1,62 @@
+.main-info {
+    $p: 20px 0;/*це змінна*/
+
+    height: 722px; /*2360px*/
+    box-sizing: border-box;
+    padding: $p;
+
+    .container {
+        position: relative;
+        box-sizing: border-box;
+        max-width: 1080px;
+        
+        .vertical-line {
+            width: 50%;
+            height: 100px;
+            position: relative;
+            border-right: 1px solid silver;
+            
+            /* left: calc(50%-4px/2); */
+            /* left: 50%; */
+        }
+
+        .slide {
+            position: relative;
+            max-width: 1080px;
+            left: -120%;
+            right: 120%;
+            transition: all 2s;
+            box-sizing: border-box;
+            padding-top: 100px;
+
+            .info-text {
+                width: 100%;
+                color: #020101;
+                text-align: center;
+                background: white;
+
+                h2 {
+                    font-family: "Fira Code", monospace;
+                    font-size: 45px;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                    line-height: 1;
+                    padding: $p;
+                }
+
+                p {
+                    font-family: "Tinos", serif;
+                    font-size: 20px;
+                    line-height: 1.5;
+                    padding-bottom: 25px;
+                }
+            }
+        }
+    }
+    .container.after-slide {
+        .slide {
+            right: 0;
+            left: 0;
+        }
+    }
+}

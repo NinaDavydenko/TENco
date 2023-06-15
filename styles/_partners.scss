@@ -1,0 +1,302 @@
+.horizontal-slider{
+    height: 950px; /*2360px*/
+    box-sizing: border-box;
+
+    .container {
+        position: relative;
+        box-sizing: border-box;
+        max-width: 1080px;
+        
+        .vertical-line {
+            width: 50%;
+            height: 100px;
+            position: relative;
+            border-right: 1px solid silver;
+            
+            /* left: calc(50%-4px/2); */
+            /* left: 50%; */
+        }
+
+        .horizontal-slider-info{
+            width: 100%;
+            height: 230px;
+            color: #020101;
+            text-align: center;
+            background: white;
+
+            h2 {
+                font-family: "Fira Code", monospace;
+                font-size: 50px;
+                font-weight: normal;
+                text-transform: uppercase;
+                line-height: 1;
+                padding-top: 55px;    
+            }
+
+            .slider-css {
+                width: 1080px;
+                height: 230px;
+                padding-top: 20px;
+                /* margin: auto; */
+                /* margin-top: 25px; */
+                /* border: 1px solid black; */
+                position: relative;
+                overflow: hidden;
+
+                .slide-css {
+                    width: 268px;
+                    height: 230px;
+                    position: absolute;  
+                    top: 0;
+                    right: -268px;
+                
+                    animation-name: slide;
+                    animation-duration: 24s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                }
+
+                @keyframes slide {
+                    from {
+                        top: 0;
+                        right: -268px;
+                    }
+                    1% {
+                        transform: translate(0px, 0px);
+                    }
+                    99.1% {
+                        transform: translate(-1380px, 0);
+                    }
+                    99.5% {
+                        transform: translate(-1380px, 300px);
+                    }
+                    99.9% {
+                        transform: translate(0px, 300px);
+                    }
+                    to {
+                        transform: (0px, 0px);
+                    }
+                }
+
+                .slide1-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/boucheron-150x150-1.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    animation-delay: 0s;
+                    z-index: 1;
+                }
+
+                .slide2-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/LVMH-150x150-1.png);
+                    animation-delay: 3s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .slide3-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/En-coulisse-150x150-1.png);
+                    animation-delay: 6s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                
+                .slide4-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/elite-rent-a-car-150x150-1.png);
+                    animation-delay: 9s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .slide5-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/global-gift-150x150-1.png);
+                    animation-delay: 12s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .slide6-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/four-seasons-150x150-2.png);
+                    animation-delay: 15s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .slide7-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/la-r%C3%A9serve-150x150-1.png);
+                    animation-delay: 18s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
+                .slide8-css { 
+                    background: url(https://tenco.ch/wp-content/uploads/2020/09/brunello-cucinelli-150x150-1.png);
+                    animation-delay: 21s;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+
+            .slider-js{
+                max-width: 1080px;
+                /* max-width: 90%; */
+                /* width: 268px; */
+                position: relative;
+                /* margin: auto; */
+                height: 230px;
+                
+                .slider-container-js{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    overflow: hidden;
+                }
+
+                .item {
+                    display: block;
+                    width: 268px;
+                    img {
+                        object-fit: cover;
+                        /* width: 100%; */
+                        width: 268px;
+                        height: 230px;
+                    }
+                }
+
+                .previous,
+                .next {
+                    /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+                    cursor: pointer;
+                    display: block;
+                    /* Положение элемента задаётся относительно границ браузера: */
+                    position: absolute;
+                    top: 50%;
+                    width: auto;
+                    margin-top: -22px;
+                    padding: 16px;
+                    /* Оформление самих кнопок: */
+                    color: white;
+                    font-weight: bold;
+                    font-size: 16px;
+                    /* Плавное появление фона при наведении курсора: */
+                    transition: 0.6s ease;
+                    /* Скругление границ: */
+                    border-radius: 0 3px 3px 0;
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                .next {
+                    right: 0;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                /* .previous:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.2);
+                } */
+
+                /* Анимация слайдов: */
+                .item {
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes fade {
+                    /* Устанавливаем и изменяем степень прозрачности: */
+                    from {
+                        opacity: 0.4
+                    }
+                    to {
+                        opacity: 1
+                    }
+                }
+            }
+            
+            .slider-cycle-js{
+                max-width: 1080px;
+                /* max-width: 90%; */
+                /* width: 268px; */
+                position: relative;
+                /* margin: auto; */
+                height: 230px;
+                
+                .slider-cycle-container-js{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    overflow: hidden;
+                }
+
+                .item-cycle {
+                    display: block;
+                    width: 268px;
+                    img {
+                        object-fit: cover;
+                        /* width: 100%; */
+                        width: 268px;
+                        height: 230px;
+                    }
+                }
+
+                .previous,
+                .next {
+                    /* Добавляет курсору иконку, когда тот оказывается над кнопкой: */
+                    cursor: pointer;
+                    display: block;
+                    /* Положение элемента задаётся относительно границ браузера: */
+                    position: absolute;
+                    top: 50%;
+                    width: auto;
+                    margin-top: -22px;
+                    padding: 16px;
+                    /* Оформление самих кнопок: */
+                    color: white;
+                    font-weight: bold;
+                    font-size: 16px;
+                    /* Плавное появление фона при наведении курсора: */
+                    transition: 0.6s ease;
+                    /* Скругление границ: */
+                    border-radius: 0 3px 3px 0;
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+
+                .next {
+                    right: 0;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                /* .previous:hover,
+                .next:hover {
+                    background-color: rgba(0, 0, 0, 0.2);
+                } */
+
+                /* Анимация слайдов: */
+                .item-cycle {
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                }
+
+                @keyframes fade {
+                    /* Устанавливаем и изменяем степень прозрачности: */
+                    from {
+                        opacity: 0.4
+                    }
+                    to {
+                        opacity: 1
+                    }
+                }
+            }
+        }
+    }
+}

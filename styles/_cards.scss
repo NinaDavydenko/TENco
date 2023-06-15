@@ -1,0 +1,207 @@
+.cards{
+    height: 620px;
+    box-sizing: border-box;
+
+    .container{
+        box-sizing: border-box;
+        max-width: 1200px;
+        height: 540px;
+        display: flex;
+        justify-content: space-between;
+
+        .card-second{
+            perspective: 1000px;
+        }
+
+        .card-first,
+        .card-second,
+        .card-third{
+            background: transparent;
+            width: 380px;
+            height: 540px;
+            padding: 10px;
+            align-items: center;            
+
+            .card-first-inner,
+            .card-third-inner{
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                content: ""; 
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);               
+
+                .card-first-front,
+                .card-third-front{
+                    width: 100%;
+                    height: 100%;
+                    content: "";    
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+
+                .card-first-front{
+                    background-image: url(https://www.tenco.ch/wp-content/uploads/2020/01/home-member-last1.vertical-tenco.jpg);
+                }
+
+                .card-third-front{
+                    background-image: url(https://www.tenco.ch/wp-content/uploads/2020/10/events3.vertical-tenco.jpg);
+                }                
+
+                .card-first-back,
+                .card-third-back{
+                    height: 100%;
+                    width: 100%;
+                    background: white;
+                    font-weight: normal;
+                    text-align: center;
+                    line-height: 2.5;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    transition: all 1s;
+
+                    .card-back-container{
+
+                        h3{
+                            font-family: "Fira Code", monospace;
+                            font-size: 21px;
+                            text-transform: uppercase;
+                        }
+
+                        p{
+                            font-family: "Tinos", serif;
+                            font-size: 15px;
+                            padding-bottom: 20px;
+                        }
+
+                        a{
+                            color: #D4AA00;
+                            border-color: #D4AA00; 
+                            border: 2px solid #D4AA00;
+                            border-radius: 7%;
+                            background: transparent;
+                            font-size: 15px;
+                            padding: 12px 24px;
+                            text-decoration: none;
+                            transition: all 1s;
+                        }
+
+                        a:hover{
+                            color: white;
+                            background-color: #D4AA00;
+                        }
+                    }
+                }                       
+            }
+
+            .card-second-inner{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    
+                transition: transform 1s;
+                transform-style: preserve-3d;
+            } 
+
+            .card-second-front{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;            
+                z-index: 2;
+    
+                .card-second-img{
+                    background: url(https://www.tenco.ch/wp-content/uploads/2020/01/home-services-last1.vertical-tenco.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .card-second-back{
+            background: white;
+            width: 100%;
+            height: 100%;
+            font-weight: normal;
+            text-align: center;
+            line-height: 2.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            z-index: 1;
+
+                .card-back-container{
+
+                    h3{
+                        font-family: "Fira Code", monospace;
+                        font-size: 21px;
+                        text-transform: uppercase;
+                    }
+
+                    p{
+                        font-family: "Tinos", serif;
+                        font-size: 15px;
+                        padding-bottom: 20px;
+                    }
+
+                    a{
+                        color: #D4AA00;
+                        border-color: #D4AA00; 
+                        border: 2px solid #D4AA00;
+                        border-radius: 7%;
+                        background: transparent;
+                        font-size: 15px;
+                        padding: 12px 24px;
+                        text-decoration: none;
+                        transition: all 1s;
+                    }
+
+                    a:hover{
+                        color: white;
+                        background-color: #D4AA00;
+                    }
+                }
+            }
+
+            .card-first-back{
+                top: -100%;
+                bottom: 0;   
+            }
+
+            .card-third-back{
+                right: -100%;
+                left: 100%;
+                top:0;
+                bottom:0;
+            }          
+        }
+
+        .card-first:hover{
+            .card-first-back{
+                top: 0;
+                bottom: 100%;
+            }
+        }
+
+        .card-second:hover .card-second-inner{
+            transform: rotateY(180deg);
+        }
+
+        .card-third:hover{
+            .card-third-back{
+                right: 0;
+                left: 0;
+                top:0;
+                bottom:0;
+            }
+        }
+    }
+}

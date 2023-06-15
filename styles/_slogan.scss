@@ -1,0 +1,22 @@
+.slogan {
+    background:rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 722px;
+
+    .container{
+        height: 722px;
+        display: flex;
+
+        h1{
+            color: #FFFFFF;
+            font-family: 'Fira Code', monospace;
+            font-size: 55px;
+            font-weight: normal;
+            text-transform: uppercase;
+            max-width: 900px;
+            height: 110px;
+            text-align: center;
+            margin: auto;
+        }
+    }
+}
